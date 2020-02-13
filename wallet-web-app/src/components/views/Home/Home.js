@@ -1,3 +1,5 @@
+import { mapGetters } from 'vuex';
+
 export default {
     data() {
         return {
@@ -23,27 +25,37 @@ export default {
             ],
         }
     },
+    computed: {
+      ...mapGetters('drizzle', ['drizzleInstance', 'isDrizzleInitialized']),
+      ...mapGetters('contracts', ['getContractData']),
+    },
     methods: {
-      firstClick() {
-        console.log("1")
-      },
-      secondClick() {
-        console.log("2")
-      },
       filePicked(file) {
         // console.log(this.$refs.myFiles);
-        console.log(file)
+        // console.log(file)
         const reader = new FileReader();
         if (typeof file !== 'undefined') {
           reader.readAsArrayBuffer(file);
           reader.onloadend = async () => {
             this.buffer = await this.convertToBuffer(reader.result);
-            console.log(this.buffer);
+            // console.log(this.buffer);
           };
         } else this.buffer = '';
       },
       async convertToBuffer(reader) {
         return Buffer.from(reader);
       },
+      submit() {
+        if (this.isDrizzleInitialized) {
+          
+          this.drizzleInstance
+          .contracts["FileHandler"]
+          .methods["sendHash"]
+          .cacheSend(this.buffer)
+        } else {
+          console.log("Drizzle Problem")
+        }
+
+      }
     }
 } 
