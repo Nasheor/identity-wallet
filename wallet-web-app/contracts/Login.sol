@@ -1,19 +1,31 @@
 pragma solidity >=0.4.21 <0.6.0;
 
 contract Login {
-  event SignatureVerified(string message, string name);   
 
-  string[] users; 
+  bool status; 
 
-  function verifyCredentials(string memory name, string memory password) public returns (uint) {
-    users.push("nash password");
-    for(uint256 i=0; i<users.length; i++) {
-      string memory tmp_data = string(abi.encodePacked(name, password));
-      if (keccak256(abi.encodePacked((users[i]))) == keccak256(abi.encodePacked(tmp_data))) {
-        emit SignatureVerified("Successfully Logged in!", name);
-        return 1;
+  function addressToString(address _addr) internal pure returns (string memory) {
+      bytes32 value = bytes32(uint256(_addr));
+      bytes memory alphabet = "0123456789abcdef";
+
+      bytes memory str = new bytes(42);
+      str[0] = '0';
+      str[1] = 'x';
+      for (uint i = 0; i < 20; i++) {
+          str[2+i*2] = alphabet[uint(uint8(value[i + 12] >> 4))];
+          str[3+i*2] = alphabet[uint(uint8(value[i + 12] & 0x0f))];
       }
+      return string(str);
+  }
+
+  function getStatus() public view returns (bool) {
+    return status;
+  }
+
+  function verifyCredentials(string memory addr) public  {
+    if (keccak256(abi.encodePacked((addr))) == keccak256(abi.encodePacked(addressToString(msg.sender)))) {
+      status = true;
     }
-    return 0; 
+    status = false;
   }
 }

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@drizzle/vue-plugin": "^0.1.1",
+    "@openzeppelin/contracts": "^2.5.0",
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5",

@@ -1,5 +1,6 @@
 <template>
-<v-content>
+<v-content V-IF="isDrizzleInitialized">
+    <p> {{ activeAccount }} </p>
     <v-container
         fluid
         fill-height
@@ -17,22 +18,16 @@
                 <v-card-text>
                 <v-form>
                     <v-text-field
-                        label="Login"
+                        label="Account"
                         name="login"
                         type="text"
-                    ></v-text-field>
-
-                    <v-text-field
-                    id="password"
-                        label="Password"
-                        name="password"
-                        type="password"
+                        v-model="address"
                     ></v-text-field>
                 </v-form>
                 </v-card-text>
                 <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn color="primary">Login</v-btn>
+                    <v-spacer></v-spacer>
+                    <v-btn color="primary" @click.prevent="verifyAccount">Login</v-btn>
                 </v-card-actions>
             </v-card>
             </v-flex>
@@ -40,3 +35,5 @@
     </v-container>
 </v-content>    
 </template>
+ <script src='./Login.js' />
+ <style scoped lang="scss" src="./Login.scss"></style>

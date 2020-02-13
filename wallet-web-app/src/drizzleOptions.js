@@ -1,14 +1,16 @@
-import Login from "@/contracts/Login.json";const options = {
+import Login from "@/contracts/Login.json";
+import FileHandler from "@/contracts/FileHandler.json";
+
+const options = {
     web3: {
       block: false,
       fallback: {
         type: "ws",
-        url: "ws://127.0.0.1:9545"
+        url: "ws://127.0.0.1:7545"
       }
     },// The contracts to monitor
-    contracts: [Login],
+    contracts: [Login, FileHandler],
     events: {
-      Login: ["SignatureAdded"]
     },
     polls: {
       // check accounts ever 15 seconds
