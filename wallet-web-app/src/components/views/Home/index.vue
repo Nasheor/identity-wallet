@@ -164,15 +164,17 @@
                 </v-layout>
                 </v-flex>
                 <v-flex xs6>
-                <v-text-field
-                    prepend-icon="mdi-domain"
-                    placeholder="Company"
-                ></v-text-field>
+                    <v-text-field
+                        prepend-icon="mdi-domain"
+                        placeholder="Company"
+                    ></v-text-field>
                 </v-flex>
                 <v-flex xs6>
-                <v-text-field
-                    placeholder="Job title"
-                ></v-text-field>
+                    <v-file-input 
+                        label="File input"
+                        show-size
+                        @change="filePicked">
+                    </v-file-input>
                 </v-flex>
                 <v-flex xs12>
                 <v-text-field

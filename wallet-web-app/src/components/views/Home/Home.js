@@ -3,6 +3,7 @@ export default {
         return {
             dialog: false,
             drawer: null,
+            buffer: '',
             items: [
               { icon: 'mdi-contacts', text: 'Credentials' },
               { icon: 'mdi-history', text: 'Attestations' },
@@ -28,6 +29,21 @@ export default {
       },
       secondClick() {
         console.log("2")
-      }
+      },
+      filePicked(file) {
+        // console.log(this.$refs.myFiles);
+        console.log(file)
+        const reader = new FileReader();
+        if (typeof file !== 'undefined') {
+          reader.readAsArrayBuffer(file);
+          reader.onloadend = async () => {
+            this.buffer = await this.convertToBuffer(reader.result);
+            console.log(this.buffer);
+          };
+        } else this.buffer = '';
+      },
+      async convertToBuffer(reader) {
+        return Buffer.from(reader);
+      },
     }
 } 
