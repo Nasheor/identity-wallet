@@ -166,7 +166,7 @@
                 <v-flex xs6>
                     <v-text-field
                         prepend-icon="mdi-domain"
-                        placeholder="Company"
+                        placeholder="Purpose"
                     ></v-text-field>
                 </v-flex>
                 <v-flex xs6>
