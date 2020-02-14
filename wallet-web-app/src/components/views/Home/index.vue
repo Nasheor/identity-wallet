@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="isDrizzleInitialized">
         <v-navigation-drawer
         v-model="drawer"
         :clipped="$vuetify.breakpoint.lgAndUp"
@@ -47,7 +47,6 @@
                 <v-list-item
                 v-for="(child, i) in item.children"
                 :key="i"
-                @click="firstClick"
                 >
                 <v-list-item-action v-if="child.icon">
                     <v-icon>{{ child.icon }}</v-icon>
@@ -62,7 +61,6 @@
             <v-list-item
                 v-else
                 :key="item.text"
-                @click="secondClick"
             >
                 <v-list-item-action>
                 <v-icon>{{ item.icon }}</v-icon>
@@ -199,7 +197,7 @@
             >Cancel</v-btn>
             <v-btn
                 text
-                @click="dialog = false"
+                @click="submit"
             >Save</v-btn>
             </v-card-actions>
         </v-card>

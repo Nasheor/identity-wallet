@@ -4,8 +4,8 @@ import App from './App.vue'
 import store from './store'
 import router from './router'
 import vuetify from './plugins/vuetify';
-import drizzleVuePlugin from "@drizzle/vue-plugin"
-import drizzleOptions from "./drizzleOptions"
+import drizzleVuePlugin from "@drizzle/vue-plugin";
+import drizzleOptions from "./plugins/drizzleOptions";
 
 
 Vue.config.productionTip = false

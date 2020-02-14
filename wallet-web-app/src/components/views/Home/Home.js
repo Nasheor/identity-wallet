@@ -1,4 +1,5 @@
 import { mapGetters } from 'vuex';
+import ipfs from '../../../plugins/ipfs-config';
 
 export default {
     data() {
@@ -6,6 +7,7 @@ export default {
             dialog: false,
             drawer: null,
             buffer: '',
+            file: '',
             items: [
               { icon: 'mdi-contacts', text: 'Credentials' },
               { icon: 'mdi-history', text: 'Attestations' },
@@ -35,6 +37,7 @@ export default {
         // console.log(file)
         const reader = new FileReader();
         if (typeof file !== 'undefined') {
+          this.file = file;
           reader.readAsArrayBuffer(file);
           reader.onloadend = async () => {
             this.buffer = await this.convertToBuffer(reader.result);
@@ -47,11 +50,17 @@ export default {
       },
       submit() {
         if (this.isDrizzleInitialized) {
-          
-          this.drizzleInstance
-          .contracts["FileHandler"]
-          .methods["sendHash"]
-          .cacheSend(this.buffer)
+          this.dialog = false;
+          ipfs.add(this.buffer).then((hashedImg) => {
+            console.log(hashedImg[0].hash);
+            this.drizzleInstance
+            .contracts["FileHandler"]
+            .methods["sendHash"]
+            .cacheSend(hashedImg[0].hash)
+          }).then(hash => {
+            console.log(hash);
+          });
+
         } else {
           console.log("Drizzle Problem")
         }
