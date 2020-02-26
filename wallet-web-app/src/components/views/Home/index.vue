@@ -110,27 +110,28 @@
             fill-height
         >
             <v-layout
-            align-center
-            justify-center
+                align-center
+                justify-center
             >
-                <p> Identity for all </p>
+                <p>{{activeAccount}}</p><br />
+                <p>Contract Data: {{counter}}</p>
             </v-layout>
         </v-container>
         </v-content>
         <v-btn
-        bottom
-        color="pink"
-        dark
-        fab
-        fixed
-        right
-        @click="dialog = !dialog"
+            bottom
+            color="pink"
+            dark
+            fab
+            fixed
+            right
+            @click="dialog = !dialog"
         >
         <v-icon>mdi-arrow-up-bold-box-outline</v-icon>
         </v-btn>
         <v-dialog
-        v-model="dialog"
-        width="800px"
+            v-model="dialog"
+            width="800px"
         >
         <v-card>
             <v-card-title class="grey darken-2">
@@ -157,14 +158,16 @@
                     >
                     </v-avatar>
                     <v-text-field
-                    placeholder="Name"
+                        placeholder="Name"
                     ></v-text-field>
                 </v-layout>
                 </v-flex>
                 <v-flex xs6>
                     <v-text-field
                         prepend-icon="mdi-domain"
-                        placeholder="Purpose"
+                        placeholder="File Name"
+                        v-model="caption"
+                        data-vv-name="caption"
                     ></v-text-field>
                 </v-flex>
                 <v-flex xs6>

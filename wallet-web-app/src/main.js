@@ -7,7 +7,6 @@ import vuetify from './plugins/vuetify';
 import drizzleVuePlugin from "@drizzle/vue-plugin";
 import drizzleOptions from "./plugins/drizzleOptions";
 
-
 Vue.config.productionTip = false
 Vue.use(drizzleVuePlugin, { store, drizzleOptions })
 

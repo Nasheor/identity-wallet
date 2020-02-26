@@ -1,5 +1,6 @@
-pragma solidity >=0.4.21 <0.6.0;
+pragma solidity 0.5.0;
 import "@openzeppelin/contracts/token/ERC721/ERC721Full.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721Mintable.sol";
 
 contract FileHandler {
     using SafeMath for uint256;
@@ -13,16 +14,16 @@ contract FileHandler {
 
     mapping(uint256 => File) files;
     uint256 file_ctr;
-    event NewFile();
+    //event NewFile();
 
-    function sendHash(string memory _fileHash, string memory _txtHash) public {
+    function setHash(string memory _fileHash, string memory _txtHash) public {
         file_ctr = file_ctr.add(1);
         File storage upload = files[file_ctr];
         upload.owner = msg.sender;
         upload.fileHash = _fileHash;
         upload.textHash = _txtHash;
 
-        emit NewFile();
+        //emit NewFile();
     }
 
     function getHash(uint256 _index)

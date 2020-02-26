@@ -31,8 +31,8 @@ export default {
   name: 'App',
 
   components: {
-   // Login,
-    Home,
+   //Login,
+   Home,
   },
 };
 

@@ -11,7 +11,8 @@ const options = {
     },// The contracts to monitor
     contracts: [Login, FileHandler],
     events: {
-      FileHandler: ['NewFile']
+      FileHandler: [],
+      Login: [],
     },
     polls: {
       // check accounts ever 15 seconds
