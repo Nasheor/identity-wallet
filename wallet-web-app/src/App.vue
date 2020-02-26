@@ -33,7 +33,10 @@ export default {
   computed: {
     ...mapGetters({
       login: 'getLoginStatus',
-  }),
+    }),
+  },
+  created() {
+    this.$router.push({path: '/login'});
   }
 };
 
