@@ -1,48 +1,24 @@
 import { mapGetters } from 'vuex';
 
-var args = {
-    contractName: 'Login',
-    method: ['verifyCredentials', 'getStatus'],
-    methodsArgs: []
-}
 export default {
     data () {
         return {
             address: '',
+            errorMessage: false,
         }
     },
     computed: {
-        // ...mapGetters('contracts', ['getContractData']),
-        ...mapGetters('drizzle', ['drizzleInstance', 'isDrizzleInitialized']),
         ...mapGetters('accounts', ['activeAccount']),
-        ...mapGetters('contracts', ['getContractData']),
-        contractData() {
-            return this.getContractData({
-                contract: args.contractName,
-                method: args.method[1],
-            })
-        }
     },
     methods: {
         verifyAccount() {
-            // console.log(this.getContractData({
-            //     contract: args.contractName,
-            //     method: args.method,
-            //     args: args.methodsArgs
-            // }));
-            console.log(this.drizzleInstance
-                .contracts[args.contractName]
-                .methods[args.method[0]]
-                .cacheSend(this.address));
-
-            // this.$store.commit("changeLoginStatus", status)
-            console.log(this.getContractData({
-                contract: args.contractName,
-                method: args.method[1],
-            }));
+            if (this.address === this.activeAccount) {
+                this.$store.commit("changeLogStatus", true);
+                this.$store.commit("setActiveAccount", this.address);
+                this.errorMessage = false
+            } else{
+                this.errorMessage = true
+            }
         }
-    },
-    created() {
-        this.$store.dispatch('drizzle/REGISTER_CONTRACT', args);
     }
 }

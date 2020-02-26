@@ -1,4 +1,4 @@
-pragma solidity 0.5.0;
+pragma solidity 0.5.16;
 import "@openzeppelin/contracts/token/ERC721/ERC721Full.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721Mintable.sol";
 
@@ -12,7 +12,7 @@ contract FileHandler {
         string textHash;
     }
 
-    mapping(uint256 => File) files;
+    mapping(uint256 => File) public files;
     uint256 file_ctr;
     //event NewFile();
 

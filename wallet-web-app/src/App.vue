@@ -6,34 +6,35 @@
       dark
     >
       <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
         <v-toolbar-title>Identity Wallet</v-toolbar-title>
       </div>
     </v-app-bar>
-    <v-content>
+    <v-content v-if="login==true">
       <Home />
+    </v-content>
+    <v-content v-else>
+      <Login />
     </v-content>
   </v-app>
 </template>
 
 <script>
-//import Login from './components/views/Login';
+import Login from './components/views/Login';
 import Home from './components/views/Home';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'App',
 
   components: {
-   //Login,
+   Login,
    Home,
   },
+  computed: {
+    ...mapGetters({
+      login: 'getLoginStatus',
+  }),
+  }
 };
 
 </script>

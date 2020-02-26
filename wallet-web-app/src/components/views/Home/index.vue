@@ -1,5 +1,5 @@
 <template>
-    <div v-if="isDrizzleInitialized">
+    <div>
         <v-navigation-drawer
         v-model="drawer"
         :clipped="$vuetify.breakpoint.lgAndUp"
@@ -113,8 +113,7 @@
                 align-center
                 justify-center
             >
-                <p>{{activeAccount}}</p><br />
-                <p>Contract Data: {{counter}}</p>
+                <h2> Identity For All </h2>
             </v-layout>
         </v-container>
         </v-content>
@@ -133,77 +132,7 @@
             v-model="dialog"
             width="800px"
         >
-        <v-card>
-            <v-card-title class="grey darken-2">
-            Create Identity Credential
-            </v-card-title>
-            <v-container grid-list-sm>
-            <v-layout
-                row
-                wrap
-            >
-                <v-flex
-                xs12
-                align-center
-                justify-space-between
-                >
-                <v-layout align-center>
-                    <v-avatar
-                    size="40px"
-                    class="mr-3"
-                    >
-                    <img
-                        src="//ssl.gstatic.com/s2/oz/images/sge/grey_silhouette.png"
-                        alt=""
-                    >
-                    </v-avatar>
-                    <v-text-field
-                        placeholder="Name"
-                    ></v-text-field>
-                </v-layout>
-                </v-flex>
-                <v-flex xs6>
-                    <v-text-field
-                        prepend-icon="mdi-domain"
-                        placeholder="File Name"
-                        v-model="caption"
-                        data-vv-name="caption"
-                    ></v-text-field>
-                </v-flex>
-                <v-flex xs6>
-                    <v-file-input 
-                        label="File input"
-                        show-size
-                        @change="filePicked">
-                    </v-file-input>
-                </v-flex>
-                <v-flex xs12>
-                <v-text-field
-                    prepend-icon="mdi-email"
-                    placeholder="Email"
-                ></v-text-field>
-                </v-flex>
-                <v-flex xs12>
-                <v-text-field
-                    type="tel"
-                    prepend-icon="mdi-phone"
-                    placeholder="(000) 000 - 0000"
-                ></v-text-field>
-                </v-flex>
-            </v-layout>
-            </v-container>
-            <v-card-actions>
-            <v-btn
-                text
-                color="primary"
-                @click="dialog = false"
-            >Cancel</v-btn>
-            <v-btn
-                text
-                @click="submit"
-            >Save</v-btn>
-            </v-card-actions>
-        </v-card>
+            <IdentityForm />
         </v-dialog>
     </div>
 </template>

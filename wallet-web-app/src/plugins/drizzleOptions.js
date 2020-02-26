@@ -16,6 +16,7 @@ const options = {
     },
     polls: {
       // check accounts ever 15 seconds
-      accounts: 15000
+      accounts: 5000
     }
-  };export default options;
+  };
+  export default options;
