@@ -29,7 +29,7 @@
                     <v-btn color="primary" @click.prevent="verifyAccount">Login</v-btn>
                 </v-card-actions>
             </v-card>
-            <v-card v-show="errorMessage" class="alert pa-8 elevation-12" color="red lighten-2" role="alert">
+            <v-card v-show="errorMessage" class="alert pa-8 elevation-12 rowss" color="red lighten-2" role="alert">
                 <strong class="ml-12">Wrong key! Try Again.</strong><v-spacer /> 
                 <v-btn class="ml-4" color="red lighten-4" @click="errorMessage = false" type="button" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>

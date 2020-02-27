@@ -6,11 +6,15 @@ const counter_args = {
   method: 'getCounter',
   methodArgs: []
 };
+const verified = true;
 
 export default {
     data() {
         return {
             file: '',
+            name: '',
+            email: '',
+            phone: '',
             caption: '',
             counter: 0,
             buffer: '',
@@ -27,7 +31,7 @@ export default {
               method: counter_args.method,
               methodArgs: counter_args.methodArgs
             });
-            console.log(this.counter);
+            console.log("Total Number of credentials: "+this.counter);
             return this.counter;
           } else {
             console.log("Drizzle still initializing");
@@ -55,19 +59,30 @@ export default {
         submit() {
             if (this.isDrizzleInitialized) {
             this.dialog = false;
+            let cap = this.caption;
             ipfs.add(this.buffer).then((hashedImg) => {
                 this.drizzleInstance
                 .contracts["FileHandler"]
                 .methods["setHash"]
-                .cacheSend(hashedImg[0].hash, this.caption)
+                .cacheSend(hashedImg[0].hash, cap);
             });
+            let active = true;
+            this.drizzleInstance
+            .contracts["FileHandler"]
+            .methods["setCredential"]
+            .cacheSend(this.name, this.email,
+                this.phone, verified, active);
+
+            this.caption = '';
+            this.file = '';
+            this.name = '';
+            this.email = '';
+            this.phone = '';
+            this.buffer = '';
+            this.save = true;
             } else {
             console.log("Drizzle Problem");
             }
-            this.caption = '';
-            this.file = '';
-            this.buffer = '';
-            this.save = true;
         },
         closeConfirmation() {
             this.save = false;

@@ -14,17 +14,11 @@
             justify-space-between
             >
             <v-layout align-center>
-                <v-avatar
-                size="40px"
-                class="mr-3"
-                >
-                <img
-                    src="//ssl.gstatic.com/s2/oz/images/sge/grey_silhouette.png"
-                    alt=""
-                >
-                </v-avatar>
+
                 <v-text-field
+                    prepend-icon="mdi-name"
                     placeholder="Name"
+                    v-model = "name"
                 ></v-text-field>
             </v-layout>
             </v-flex>
@@ -33,7 +27,6 @@
                     prepend-icon="mdi-domain"
                     placeholder="File Name"
                     v-model="caption"
-                    data-vv-name="caption"
                 ></v-text-field>
             </v-flex>
             <v-flex xs6>
@@ -47,6 +40,7 @@
             <v-text-field
                 prepend-icon="mdi-email"
                 placeholder="Email"
+                v-model = "email"
             ></v-text-field>
             </v-flex>
             <v-flex xs12>
@@ -54,6 +48,7 @@
                 type="tel"
                 prepend-icon="mdi-phone"
                 placeholder="(000) 000 - 0000"
+                v-model = "phone"
             ></v-text-field>
             </v-flex>
         </v-layout>
@@ -64,7 +59,7 @@
             @click="submit"
         >Save</v-btn>
         </v-card-actions>
-        <v-card class="ma-1 green darken-7 row" v-if="getSave===true"> 
+        <v-card class="ma-1 green darken-7 rowss" v-if="getSave===true"> 
             <v-card-text> Successfully Stored! You'll get a notification upon verification </v-card-text>
             <v-btn @click="closeConfirmation" class="mt-2 mr-2"> X </v-btn>
         </v-card>

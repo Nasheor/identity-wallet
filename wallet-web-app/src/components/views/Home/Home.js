@@ -34,6 +34,6 @@ export default {
     ]),
   },
   created() {
-    this.$router.push({path: `/home/${this.getActiveAccount}`});
+    this.$router.push({path: '/home'});
   }
 } 
