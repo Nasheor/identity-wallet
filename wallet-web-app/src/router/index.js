@@ -1,8 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../components/views/Login'
-import Home from '../components/views/Login'
-import store from '../store'
+import Home from '../components/views/Home'
+import Credentials from '../components/sections/Credentials'
+import Attestations from '../components/sections/Attestations'
+import Processing from '../components/sections/Processing'
+import Settings from '../components/sections/Settings'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -15,7 +19,24 @@ const routes = [
     path: '/home',
     name: 'Home',
     component: Home,
-    meta: { requiresLogin: true }
+    children: [
+      {
+        path: 'credentials',
+        component: Credentials
+      },
+      {
+        path: 'attestations',
+        component: Attestations
+      },
+      {
+        path: 'processing',
+        component: Processing
+      },
+      {
+        path: 'settings',
+        component: Settings
+      },
+    ]
   },
   { path: "*", redirect: "/home" }
 ]
@@ -26,13 +47,13 @@ const router = new VueRouter({
 })
 
 
-router.beforeEach((to, from, next) => {
-  if(to.matched.some(record => record.meta.requiresLogin) && store.getters.getLoginStatus == false) {
-    next("/login")
-  } else {
-    console.log("Done")
-    next()
-  }
-})
+// router.beforeEach((to, from, next) => {
+//   if(to.matched.some(record => record.meta.requiresLogin) && store.getters.getLoginStatus == false) {
+//     next("/login")
+//   } else {
+//     console.log("Done")
+//     next()
+//   }
+// })
 
 export default router

@@ -2,8 +2,8 @@ pragma solidity 0.5.16;
 import "@openzeppelin/contracts/token/ERC721/ERC721Full.sol";
 
 contract FileHandler {
-    using SafeMath for uint256;
 
+    using SafeMath for uint256;
 
     struct File {
         address owner;
@@ -24,8 +24,8 @@ contract FileHandler {
     mapping(uint256 => Credential) public credentials;
     uint256 file_ctr;
     uint256 credential_ctr;
-    //event NewFile();
 
+    event NewFile();
     function setHash(string memory _fileHash, string memory _txtHash) public {
         file_ctr = file_ctr.add(1);
         File storage upload = files[file_ctr];
@@ -33,7 +33,7 @@ contract FileHandler {
         upload.fileHash = _fileHash;
         upload.textHash = _txtHash;
 
-        //emit NewFile();
+        emit NewFile();
     }
 
     function setCredential(string memory _name, string memory _email, 
@@ -47,7 +47,6 @@ contract FileHandler {
         newbie.phone = _phone;
         newbie.verified = _verified;
         newbie.active = _active;
-       //emit NewFile();
     }
 
     function getHash(uint256 _index)

@@ -35,8 +35,7 @@ export default {
             return this.counter;
           } else {
             console.log("Drizzle still initializing");
-          }
-  
+          }  
         },
         getSave() {
             return this.save;
@@ -61,6 +60,7 @@ export default {
             this.dialog = false;
             let cap = this.caption;
             ipfs.add(this.buffer).then((hashedImg) => {
+                console.log(hashedImg);
                 this.drizzleInstance
                 .contracts["FileHandler"]
                 .methods["setHash"]

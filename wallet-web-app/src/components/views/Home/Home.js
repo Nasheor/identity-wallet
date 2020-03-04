@@ -10,21 +10,10 @@ export default {
           dialog: false,
           drawer: null,
           items: [
-            { icon: 'mdi-contacts', text: 'Credentials' },
-            { icon: 'mdi-history', text: 'Attestations' },
-            { icon: 'mdi-animation-outline', text: 'Processing' },
-            {
-              icon: 'mdi-arrow-up-box',
-              'icon-alt': 'mdi-arrow-down-box',
-              text: 'More',
-              model: false,
-              children: [
-                { text: 'Import' },
-                { text: 'Export' },
-                { text: 'Print' },
-              ],
-            },
-            { icon: 'mdi-settings', text: 'Settings' },
+            { icon: 'mdi-contacts', text: 'Credentials', route: 'credentials' },
+            { icon: 'mdi-history', text: 'Attestations', route: 'attestations' },
+            { icon: 'mdi-animation-outline', text: 'Processing', route: 'processing' },
+            { icon: 'mdi-settings', text: 'Settings', route: 'settings' },
           ],
       }
   },
@@ -33,7 +22,4 @@ export default {
       'getActiveAccount'
     ]),
   },
-  created() {
-    this.$router.push({path: '/home'});
-  }
 } 

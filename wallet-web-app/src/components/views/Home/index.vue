@@ -44,19 +44,6 @@
                     </v-list-item-content>
                 </v-list-item>
                 </template>
-                <v-list-item
-                v-for="(child, i) in item.children"
-                :key="i"
-                >
-                <v-list-item-action v-if="child.icon">
-                    <v-icon>{{ child.icon }}</v-icon>
-                </v-list-item-action>
-                <v-list-item-content>
-                    <v-list-item-title>
-                    {{ child.text }}
-                    </v-list-item-title>
-                </v-list-item-content>
-                </v-list-item>
             </v-list-group>
             <v-list-item
                 v-else

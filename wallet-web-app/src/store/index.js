@@ -16,7 +16,7 @@ export default new Vuex.Store({
     },
     setActiveAccount(state, payload) {
       state.activeAccount = payload;
-    }
+    },
   },
   getters: {
     getLoginStatus(state) {
@@ -24,6 +24,6 @@ export default new Vuex.Store({
     },
     getActiveAccount(state) {
       return state.activeAccount; 
-    }
+    },
   }
 });
