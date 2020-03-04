@@ -10,12 +10,17 @@ export default {
           dialog: false,
           drawer: null,
           items: [
-            { icon: 'mdi-contacts', text: 'Credentials', route: 'credentials' },
+            { icon: 'mdi-contacts', text: 'Credentials', route: '/home/credentials' },
             { icon: 'mdi-history', text: 'Attestations', route: 'attestations' },
             { icon: 'mdi-animation-outline', text: 'Processing', route: 'processing' },
             { icon: 'mdi-settings', text: 'Settings', route: 'settings' },
           ],
       }
+  },
+  methods: {
+    navigation(event) {
+      console.log(event);
+    },
   },
   computed: {
     ...mapGetters([
