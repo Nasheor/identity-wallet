@@ -1,6 +1,7 @@
 <template>
     <div>
-        <p> This is where identity credentials go </p>
+        <h2> This is where identity credentials go </h2>
+        <h4>Counter:{{ getCounter }} </h4>
     </div>    
 </template>
 
