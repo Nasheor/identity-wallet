@@ -11,7 +11,7 @@ export default{
         }
     },
     methods: {
-        uodateDrawer() {
+        updateDrawer() {
             this.drawer = !this.drawer;
         },
         logout() {
@@ -21,4 +21,9 @@ export default{
                 localStorage.setItem('address', '');
         }
     },
+    // computed: {
+    //     drawer() {
+    //         return this.draw;
+    //     }
+    // }
 }

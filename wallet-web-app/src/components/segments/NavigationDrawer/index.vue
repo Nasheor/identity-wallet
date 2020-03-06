@@ -38,7 +38,7 @@
                 style="width: 300px"
                 class="ml-0 pl-3"
             >
-                <v-app-bar-nav-icon color="white" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+                <v-app-bar-nav-icon color="white" @click.stop="updateDrawer"></v-app-bar-nav-icon>
                 <!-- <span class="hidden-sm-and-down text--secondary font-weight-medium headline mt-0 pt-0">Identity Wallet</span> -->
             </v-toolbar-title>
             <v-text-field

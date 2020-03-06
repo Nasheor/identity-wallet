@@ -3,8 +3,8 @@
       <v-row>
         <v-col cols="84">
           <v-row
-            align="alignment"
-            justify="justify"
+            align="start"
+            justify="start"
           >
             <CredentialCard
               v-for="n in 21"
