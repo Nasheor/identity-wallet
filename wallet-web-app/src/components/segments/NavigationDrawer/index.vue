@@ -31,7 +31,7 @@
         <v-app-bar
             :clipped-left="$vuetify.breakpoint.lgAndUp"
             app
-            color="blue darken-3"
+
             darks
         >
             <v-toolbar-title
@@ -46,14 +46,14 @@
                 solo-inverted
                 hide-details
                 label="Search"
-                class="hidden-sm-and-down white"
+                class="hidden-sm-and-down"
             ></v-text-field>
             <v-spacer></v-spacer>
             <v-btn icon>
-                <v-icon color="white">mdi-dialpad</v-icon>
-            </v-btn>
-            <v-btn icon>
                 <v-icon color="white">mdi-email</v-icon>
+            </v-btn>
+            <v-btn @click="logout" icon>
+                <v-icon color="white">mdi-logout</v-icon>
             </v-btn>
         </v-app-bar>
     </div>

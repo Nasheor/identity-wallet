@@ -5,15 +5,13 @@
         </keep-alive>
 
         <!-- Router view where the data of all components will be rendered -->
-        <v-content>
+        <v-content class="ml-4 pa-2 mt-0">
             <v-container
                 fluid
                 fill-height
+                class="pa-0"
             >
-                <v-layout
-                    align-center
-                    justify-center
-                >
+                <v-layout>
                     <router-view></router-view>
                 </v-layout>
             </v-container>

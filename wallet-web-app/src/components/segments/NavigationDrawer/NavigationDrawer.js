@@ -13,6 +13,12 @@ export default{
     methods: {
         uodateDrawer() {
             this.drawer = !this.drawer;
+        },
+        logout() {
+            this.$store.commit("changeLogStatus", false);
+            this.$router.push("/login");
+            location.reload();
+                localStorage.setItem('address', '');
         }
     },
 }

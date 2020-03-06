@@ -2,14 +2,12 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
-      dark
     >
       <div class="d-flex align-center">
         <v-toolbar-title>Identity Wallet</v-toolbar-title>
       </div>
     </v-app-bar>
-    <v-content v-if="login==true">
+    <v-content v-if="login===true || login==='true'">
       <Home />
     </v-content>
     <v-content v-else>
@@ -36,7 +34,11 @@ export default {
     }),
   },
   created() {
-    this.$router.push({path: '/login'});
+    if(this.login===true || this.login === "true") {
+      this.$router.push({path: '/home/credentials'})
+    } else {
+      this.$router.push({path: '/login'});
+    }
   }
 };
 

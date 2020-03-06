@@ -1,8 +1,22 @@
 <template>
-    <div>
-        <h2> This is where identity credentials go </h2>
-        <h4>Counter:{{ getCounter }} </h4>
-    </div>    
+    <v-container fluid dark class="mx-auto mt-0">
+      <v-row>
+        <v-col cols="84">
+          <v-row
+            align="alignment"
+            justify="justify"
+          >
+            <CredentialCard
+              v-for="n in 21"
+              :key="n"
+              class="ma-3 pa-2"
+              outlined
+              tile
+            />
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-container> 
 </template>
 
  <script src='./Credentials.js' />

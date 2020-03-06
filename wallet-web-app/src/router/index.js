@@ -38,7 +38,7 @@ const routes = [
       },
     ]
   },
-  { path: "*", redirect: "/home" }
+  { path: "*", redirect: "/home/credentials" }
 ]
 
 const router = new VueRouter({
@@ -46,14 +46,14 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  if(to.name != 'Login' && localStorage.getItem('login') === "false") {
+    next({name: 'Login'})
+  } else {
+    console.log("From: "+to);
+    next()
 
-// router.beforeEach((to, from, next) => {
-//   if(to.matched.some(record => record.meta.requiresLogin) && store.getters.getLoginStatus == false) {
-//     next("/login")
-//   } else {
-//     console.log("Done")
-//     next()
-//   }
-// })
+  }
+})
 
 export default router

@@ -2,17 +2,17 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 Vue.use(Vuex);
-// localStorage.setItem('login', false);
 
 export default new Vuex.Store({
   state: {
-    login: false,
+    login: localStorage.getItem('login'),
     activeAccount: '',
     num_credentials: ''
   },
   mutations: {
     changeLogStatus(state, payload) {
       state.login = payload;
+      localStorage.setItem('login', payload);
     },
     setActiveAccount(state, payload) {
       state.activeAccount = payload;

@@ -1,5 +1,5 @@
 <template>
-<v-content V-IF="isDrizzleInitialized">
+<v-content v-if="getLoginStatus === false || getLoginStatus === 'false'">
     <v-container
         fluid
         fill-height
@@ -22,16 +22,16 @@
                         type="text"
                         v-model="address"
                     ></v-text-field>
-                </v-form>
+                </v-form>   
                 </v-card-text>
                 <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn color="primary" @click.prevent="verifyAccount">Login</v-btn>
+                    <v-btn @click.prevent="verifyAccount">Login</v-btn>
                 </v-card-actions>
             </v-card>
             <v-card v-show="errorMessage" class="alert pa-8 elevation-12 rowss" color="red lighten-2" role="alert">
                 <strong class="ml-12">Wrong key! Try Again.</strong><v-spacer /> 
-                <v-btn class="ml-4" color="red lighten-4" @click="errorMessage = false" type="button" data-dismiss="alert" aria-label="Close">
+                <v-btn class="ml-4" color="red lighten-8" @click="errorMessage = false" type="button" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </v-btn>
             </v-card>
