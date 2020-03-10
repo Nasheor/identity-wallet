@@ -67,6 +67,7 @@ export default {
                     })); 
                 }
                 this.credentials = data;
+                console.log(this.credentials[1]);
                 this.files = files_data;
                 // TO DO
                 // Commit the locally populated credential and file data to the store
@@ -76,7 +77,10 @@ export default {
               } else {
                 console.log("Drizzle still initializing");
               }            
-        }    
+        },
+        getCredentials() {
+            return this.credentials;
+        }   
     },
     methods: {
         populateCredentials(item) {

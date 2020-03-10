@@ -9,15 +9,15 @@
         ></v-img>
     
         <v-card-title>
-            Top western road trips
+            {{ purpose }}
         </v-card-title>
     
         <v-card-subtitle>
-            1,000 miles of wonder
+            {{ email }}
         </v-card-subtitle>
     
         <v-card-actions>
-            <v-btn text>Share</v-btn>
+            <v-btn text>{{ address }}</v-btn>
     
             <v-btn
                 color="purple"

@@ -3,7 +3,6 @@
         <!-- Main navigation drawer of the application -->
         <v-navigation-drawer
             v-model="drawer"
-            @click.stop="updateDrawer"
             :clipped="$vuetify.breakpoint.lgAndUp"
             app
         >
@@ -31,7 +30,6 @@
         <v-app-bar
             :clipped-left="$vuetify.breakpoint.lgAndUp"
             app
-
             darks
         >
             <v-toolbar-title
@@ -39,7 +37,6 @@
                 class="ml-0 pl-3"
             >
                 <v-app-bar-nav-icon color="white" @click.stop="updateDrawer"></v-app-bar-nav-icon>
-                <!-- <span class="hidden-sm-and-down text--secondary font-weight-medium headline mt-0 pt-0">Identity Wallet</span> -->
             </v-toolbar-title>
             <v-text-field
                 flat
