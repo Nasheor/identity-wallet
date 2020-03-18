@@ -59,6 +59,7 @@ contract FileHandler {
             file = files[_index].fileHash;
             text = files[_index].textHash;
     }
+    
     function getCredential(uint256 _index)
         public view returns (
             string memory name,
@@ -75,6 +76,7 @@ contract FileHandler {
             verified = credentials[_index].verified;
             active = credentials[_index].active;
         }
+
     function revokeToken(uint256 _index)
         public returns (
             bool status

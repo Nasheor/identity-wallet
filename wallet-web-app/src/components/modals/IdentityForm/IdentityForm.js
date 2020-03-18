@@ -1,4 +1,5 @@
 import { mapGetters } from 'vuex';
+import { sha256 } from 'js-sha256';
 import ipfs from '../../../plugins/ipfs-config';
 
 const counter_args = {

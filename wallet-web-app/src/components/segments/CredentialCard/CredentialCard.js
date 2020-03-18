@@ -5,12 +5,12 @@ export default {
     data() {
         return {
             show: false,
-            purpose: this.purpose,
-            email: this.email,
-            phone: this.phone,
-            verified: this.verified,
-            active: this.active,
-            address: this.address
+            credential_purpose: this.purpose,
+            credential_email: this.email,
+            credential_phone: this.phone,
+            credential_verified: this.verified,
+            credential_active: this.active,
+            credential_address: this.address
         }
     }
 }

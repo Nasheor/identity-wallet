@@ -8,13 +8,13 @@
           >
             <CredentialCard
               v-for="credential in getCredentials"
-              :key="credential.phone"
-              v-bind:email="credential.email"
-              v-bind:purpose="credential.purpose"
-              v-bind:phone="credential.phone"
-              v-bind:active="credential.active"
-              v-bind:address="credential.address"
-              v-bind:verified="credential.verified"
+              :key="credential['phone']"
+              v-bind:email="credential['email']"
+              v-bind:purpose="credential['name']"
+              v-bind:phone="credential['phone']"
+              v-bind:active="credential['active']"
+              v-bind:address="credential['address']"
+              v-bind:verified="credential['verified']"
               class="ma-3 pa-2"
               outlined
               tile

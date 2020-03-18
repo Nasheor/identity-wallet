@@ -69,10 +69,7 @@ export default {
                 this.credentials = data;
                 console.log(this.credentials[1]);
                 this.files = files_data;
-                // TO DO
-                // Commit the locally populated credential and file data to the store
-                // in the event another component needs to access it. 
-                
+               
                 return this.counter;
               } else {
                 console.log("Drizzle still initializing");

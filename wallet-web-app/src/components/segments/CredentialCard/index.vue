@@ -9,21 +9,21 @@
         ></v-img>
     
         <v-card-title>
-            {{ purpose }}
+           {{ purpose }}
         </v-card-title>
     
         <v-card-subtitle>
-            {{ email }}
+            {{ credential_email }}
         </v-card-subtitle>
     
         <v-card-actions>
-            <v-btn text>{{ address }}</v-btn>
+            <v-btn text>{{ credential_address }}</v-btn>
     
             <v-btn
                 color="purple"
                 text
             >
-            Explore
+                Delete
             </v-btn>
     
             <v-spacer></v-spacer>
