@@ -1,3 +1,5 @@
+import { mapGetters } from 'vuex';
+
 export default{
     data() {
         return {
@@ -6,8 +8,8 @@ export default{
               { icon: 'mdi-contacts', text: 'Credentials', route: '/home/credentials' },
               { icon: 'mdi-history', text: 'Attestations', route: '/home/attestations' },
               { icon: 'mdi-animation-outline', text: 'Processing', route: '/home/processing' },
-              { icon: 'mdi-cog-outline', text: 'Settings', route: '/home/settings' },
             ],
+            searchTerm: '',
         }
     },
     methods: {
@@ -21,4 +23,7 @@ export default{
                 localStorage.setItem('address', '');
         }
     },
+    computed: {
+        ...mapGetters('accounts', ['activeAccount']),
+    }
 }

@@ -1,0 +1,307 @@
+[2020/03/21 12:00:16.952] - Starting server (version 2.1.2) with initial configuration: {"gasLimit":6721975,"gasPrice":20000000000,"hardfork":"petersburg","hostname":"127.0.0.1","port":7545,"network_id":5777,"default_balance_ether":100,"total_accounts":10,"unlocked_accounts":[],"locked":false,"vmErrorsOnRPCResponse":true,"verbose":false,"db_path":"/home/nash/.config/Ganache/workspaces/identity-wallet/chaindata","logDirectory":"/home/nash/Documents/Projects/Blockchain/Project/identity-wallet/wallet-web-app/logs"}
+[2020/03/21 12:00:17.290] - eth_subscribe
+[2020/03/21 12:00:17.296] - eth_getLogs
+[2020/03/21 12:00:17.299] - eth_blockNumber
+[2020/03/21 12:00:17.300] - eth_subscribe
+[2020/03/21 12:00:17.305] - eth_getCode
+[2020/03/21 12:00:17.346] - eth_getCode
+[2020/03/21 12:00:17.394] - eth_getCode
+[2020/03/21 12:00:17.412] - eth_getCode
+[2020/03/21 12:00:17.420] - eth_getCode
+[2020/03/21 12:00:17.817] - eth_blockNumber
+[2020/03/21 12:00:18.205] - eth_blockNumber
+[2020/03/21 12:00:18.240] - eth_accounts
+[2020/03/21 12:00:18.240] - eth_gasPrice
+[2020/03/21 12:00:18.240] - eth_getBlockByNumber
+[2020/03/21 12:00:18.241] - eth_subscribe
+[2020/03/21 12:00:18.378] - eth_accounts
+[2020/03/21 12:00:18.586] - eth_getBalance
+[2020/03/21 12:00:18.630] - eth_getTransactionCount
+[2020/03/21 12:00:18.679] - eth_getBalance
+[2020/03/21 12:00:18.720] - eth_getTransactionCount
+[2020/03/21 12:00:18.758] - eth_getBalance
+[2020/03/21 12:00:18.794] - eth_getTransactionCount
+[2020/03/21 12:00:18.829] - eth_getBalance
+[2020/03/21 12:00:18.864] - eth_getTransactionCount
+[2020/03/21 12:00:18.901] - eth_getBalance
+[2020/03/21 12:00:18.934] - eth_getTransactionCount
+[2020/03/21 12:00:18.961] - eth_getBalance
+[2020/03/21 12:00:18.996] - eth_getTransactionCount
+[2020/03/21 12:00:19.030] - eth_getBalance
+[2020/03/21 12:00:19.064] - eth_getTransactionCount
+[2020/03/21 12:00:19.098] - eth_getBalance
+[2020/03/21 12:00:19.131] - eth_getTransactionCount
+[2020/03/21 12:00:19.166] - eth_getBalance
+[2020/03/21 12:00:19.201] - eth_getTransactionCount
+[2020/03/21 12:00:19.234] - eth_getBalance
+[2020/03/21 12:00:19.267] - eth_getTransactionCount
+[2020/03/21 12:00:19.668] - eth_getBalance
+[2020/03/21 12:00:19.709] - eth_getTransactionCount
+[2020/03/21 12:00:19.745] - eth_getBalance
+[2020/03/21 12:00:19.778] - eth_getTransactionCount
+[2020/03/21 12:00:19.812] - eth_getBalance
+[2020/03/21 12:00:19.838] - eth_getTransactionCount
+[2020/03/21 12:00:19.872] - eth_getBalance
+[2020/03/21 12:00:19.906] - eth_getTransactionCount
+[2020/03/21 12:00:19.941] - eth_getBalance
+[2020/03/21 12:00:19.976] - eth_getTransactionCount
+[2020/03/21 12:00:20.011] - eth_getBalance
+[2020/03/21 12:00:20.045] - eth_getTransactionCount
+[2020/03/21 12:00:20.081] - eth_getBalance
+[2020/03/21 12:00:20.116] - eth_getTransactionCount
+[2020/03/21 12:00:20.150] - eth_getBalance
+[2020/03/21 12:00:20.184] - eth_getTransactionCount
+[2020/03/21 12:00:20.219] - eth_getBalance
+[2020/03/21 12:00:20.244] - eth_getTransactionCount
+[2020/03/21 12:00:20.277] - eth_getBalance
+[2020/03/21 12:00:20.311] - eth_getTransactionCount
+[2020/03/21 12:00:24.506] - eth_getBalance
+[2020/03/21 12:00:24.683] - eth_getTransactionByHash
+[2020/03/21 12:00:24.861] - eth_getTransactionReceipt
+[2020/03/21 12:00:25.012] - eth_getTransactionByHash
+[2020/03/21 12:00:25.194] - eth_getTransactionReceipt
+[2020/03/21 12:00:25.396] - eth_getBlockByNumber
+[2020/03/21 12:00:25.908] - net_version
+[2020/03/21 12:00:25.917] - eth_getCode
+[2020/03/21 12:00:26.056] - eth_getBlockByNumber
+[2020/03/21 12:00:26.518] - net_version
+[2020/03/21 12:00:26.525] - eth_getCode
+[2020/03/21 12:00:27.025] - net_version
+[2020/03/21 12:00:27.029] - eth_getCode
+[2020/03/21 12:00:27.033] - eth_getBlockByNumber
+[2020/03/21 12:00:27.043] - eth_getBalance
+[2020/03/21 12:00:27.049] - eth_getTransactionCount
+[2020/03/21 12:00:27.064] - eth_getStorageAt
+[2020/03/21 12:00:37.337] - eth_blockNumber
+[2020/03/21 12:00:37.829] - eth_blockNumber
+[2020/03/21 12:00:57.354] - eth_blockNumber
+[2020/03/21 12:00:57.839] - eth_blockNumber
+[2020/03/21 12:01:17.381] - eth_blockNumber
+[2020/03/21 12:01:17.853] - eth_blockNumber
+[2020/03/21 12:01:37.399] - eth_blockNumber
+[2020/03/21 12:01:37.872] - eth_blockNumber
+[2020/03/21 12:01:57.407] - eth_blockNumber
+[2020/03/21 12:01:57.888] - eth_blockNumber
+[2020/03/21 12:02:16.517] - eth_blockNumber
+[2020/03/21 12:02:16.553] - net_version
+[2020/03/21 12:02:16.574] - eth_accounts
+[2020/03/21 12:02:16.658] - eth_getBlockByNumber
+[2020/03/21 12:02:16.708] - eth_accounts
+[2020/03/21 12:02:16.844] - eth_getBlockByNumber
+[2020/03/21 12:02:16.869] - eth_getBlockByNumber
+[2020/03/21 12:02:16.901] - eth_getBlockByNumber
+[2020/03/21 12:02:16.934] - eth_estimateGas
+[2020/03/21 12:02:17.427] - eth_blockNumber
+[2020/03/21 12:02:18.048] - eth_blockNumber
+[2020/03/21 12:02:20.574] - eth_getBlockByNumber
+[2020/03/21 12:02:20.574] - eth_blockNumber
+[2020/03/21 12:02:20.590] - eth_sendTransaction
+[2020/03/21 12:02:20.842] - 
+[2020/03/21 12:02:20.845] -   Transaction: 0x535ecb0f478b415315e698da07284dfa188b61812e8b9c9fb98157819296b54f
+[2020/03/21 12:02:20.847] -   Contract created: 0x94dcbb59f713cc0722e134b637a28d8ef6ced8e4
+[2020/03/21 12:02:20.848] -   Gas usage: 188483
+[2020/03/21 12:02:20.850] -   Block Number: 186
+[2020/03/21 12:02:20.852] -   Block Time: Sat Mar 21 2020 12:02:20 GMT+0000 (GMT)
+[2020/03/21 12:02:20.855] - 
+[2020/03/21 12:02:20.862] - eth_getBlockByNumber
+[2020/03/21 12:02:20.870] - eth_getTransactionReceipt
+[2020/03/21 12:02:20.920] - eth_getCode
+[2020/03/21 12:02:20.950] - eth_getTransactionByHash
+[2020/03/21 12:02:20.976] - eth_getBlockByNumber
+[2020/03/21 12:02:20.996] - eth_getBalance
+[2020/03/21 12:02:21.027] - eth_getBlockByNumber
+[2020/03/21 12:02:21.056] - eth_getBlockByNumber
+[2020/03/21 12:02:21.082] - eth_sendTransaction
+[2020/03/21 12:02:21.161] - 
+[2020/03/21 12:02:21.162] -   Transaction: 0xa3527433260361810a55acf937a83e8ae4e4ce45ab3df634b16c1cbff8b93f17
+[2020/03/21 12:02:21.163] -   Gas usage: 42001
+[2020/03/21 12:02:21.163] -   Block Number: 187
+[2020/03/21 12:02:21.163] -   Block Time: Sat Mar 21 2020 12:02:21 GMT+0000 (GMT)
+[2020/03/21 12:02:21.163] - 
+[2020/03/21 12:02:21.166] - eth_getBlockByNumber
+[2020/03/21 12:02:21.170] - eth_getTransactionReceipt
+[2020/03/21 12:02:21.221] - eth_getBlockByNumber
+[2020/03/21 12:02:21.241] - eth_accounts
+[2020/03/21 12:02:21.365] - eth_getBlockByNumber
+[2020/03/21 12:02:21.373] - eth_getBlockByNumber
+[2020/03/21 12:02:21.378] - eth_getBlockByNumber
+[2020/03/21 12:02:21.389] - eth_estimateGas
+[2020/03/21 12:02:21.429] - eth_getBlockByNumber
+[2020/03/21 12:02:21.430] - eth_blockNumber
+[2020/03/21 12:02:21.439] - eth_sendTransaction
+[2020/03/21 12:02:21.522] - 
+[2020/03/21 12:02:21.523] -   Transaction: 0xd6b13cb878d455f7b07f01f97bb1a7582018698829efd4956e796e57a7dbf079
+[2020/03/21 12:02:21.524] -   Contract created: 0x204ffda50cca9573945246fb07cf46c8fbaa1027
+[2020/03/21 12:02:21.525] -   Gas usage: 394012
+[2020/03/21 12:02:21.525] -   Block Number: 188
+[2020/03/21 12:02:21.526] -   Block Time: Sat Mar 21 2020 12:02:21 GMT+0000 (GMT)
+[2020/03/21 12:02:21.526] - 
+[2020/03/21 12:02:21.531] - eth_getBalance
+[2020/03/21 12:02:21.533] - eth_getTransactionReceipt
+[2020/03/21 12:02:21.547] - eth_getCode
+[2020/03/21 12:02:21.569] - eth_getTransactionByHash
+[2020/03/21 12:02:21.596] - eth_getBlockByNumber
+[2020/03/21 12:02:21.607] - eth_getBlockByNumber
+[2020/03/21 12:02:21.625] - eth_getBalance
+[2020/03/21 12:02:21.655] - eth_getTransactionCount
+[2020/03/21 12:02:21.700] - eth_getBlockByNumber
+[2020/03/21 12:02:21.733] - eth_getBlockByNumber
+[2020/03/21 12:02:21.766] - eth_sendTransaction
+[2020/03/21 12:02:21.854] - eth_getBalance
+[2020/03/21 12:02:21.880] - 
+[2020/03/21 12:02:21.880] -   Transaction: 0x90d390ed8466f6ba64056391cd6d1aa674d06ead799079b42b172bd1c0d44d8a
+[2020/03/21 12:02:21.881] -   Gas usage: 27001
+[2020/03/21 12:02:21.881] -   Block Number: 189
+[2020/03/21 12:02:21.881] -   Block Time: Sat Mar 21 2020 12:02:21 GMT+0000 (GMT)
+[2020/03/21 12:02:21.881] - 
+[2020/03/21 12:02:21.891] - eth_getBlockByNumber
+[2020/03/21 12:02:21.896] - eth_getTransactionReceipt
+[2020/03/21 12:02:21.950] - eth_getBlockByNumber
+[2020/03/21 12:02:22.004] - eth_accounts
+[2020/03/21 12:02:22.070] - eth_getTransactionCount
+[2020/03/21 12:02:22.148] - eth_getBlockByNumber
+[2020/03/21 12:02:22.162] - eth_getBlockByNumber
+[2020/03/21 12:02:22.170] - eth_getBlockByNumber
+[2020/03/21 12:02:22.178] - eth_estimateGas
+[2020/03/21 12:02:22.198] - eth_getBalance
+[2020/03/21 12:02:22.274] - eth_getBlockByNumber
+[2020/03/21 12:02:22.275] - eth_blockNumber
+[2020/03/21 12:02:22.456] - eth_getTransactionCount
+[2020/03/21 12:02:22.465] - eth_sendTransaction
+[2020/03/21 12:02:22.558] - eth_getBalance
+[2020/03/21 12:02:22.624] - 
+[2020/03/21 12:02:22.628] -   Transaction: 0x9c157c8d186a4a38529835c8c9729908e1a297a1b10dfdc7e9e319a1630b09c6
+[2020/03/21 12:02:22.629] -   Contract created: 0xff9bb63df2009e6264483c95f07a7b513dbb3ed9
+[2020/03/21 12:02:22.630] -   Gas usage: 1558356
+[2020/03/21 12:02:22.631] -   Block Number: 190
+[2020/03/21 12:02:22.632] -   Block Time: Sat Mar 21 2020 12:02:22 GMT+0000 (GMT)
+[2020/03/21 12:02:22.632] - 
+[2020/03/21 12:02:22.645] - eth_getBlockByNumber
+[2020/03/21 12:02:22.647] - eth_getTransactionReceipt
+[2020/03/21 12:02:22.681] - eth_getCode
+[2020/03/21 12:02:22.699] - eth_getTransactionByHash
+[2020/03/21 12:02:22.714] - eth_getBlockByNumber
+[2020/03/21 12:02:22.719] - eth_getTransactionCount
+[2020/03/21 12:02:22.722] - eth_getBalance
+[2020/03/21 12:02:22.817] - eth_getBlockByNumber
+[2020/03/21 12:02:22.847] - eth_getBlockByNumber
+[2020/03/21 12:02:22.869] - eth_sendTransaction
+[2020/03/21 12:02:22.923] - eth_getBalance
+[2020/03/21 12:02:23.031] - 
+[2020/03/21 12:02:23.032] -   Transaction: 0x062e6e75a2cb245d6f26e6d29d40e5acb2db86355cb88e80732074b28e873ef6
+[2020/03/21 12:02:23.033] -   Gas usage: 27001
+[2020/03/21 12:02:23.033] -   Block Number: 191
+[2020/03/21 12:02:23.034] -   Block Time: Sat Mar 21 2020 12:02:22 GMT+0000 (GMT)
+[2020/03/21 12:02:23.034] - 
+[2020/03/21 12:02:23.053] - eth_getBlockByNumber
+[2020/03/21 12:02:23.054] - eth_getTransactionReceipt
+[2020/03/21 12:02:23.115] - eth_getBlockByNumber
+[2020/03/21 12:02:23.134] - eth_accounts
+[2020/03/21 12:02:23.196] - eth_getTransactionCount
+[2020/03/21 12:02:23.238] - eth_getBlockByNumber
+[2020/03/21 12:02:23.254] - eth_getBlockByNumber
+[2020/03/21 12:02:23.265] - eth_getBlockByNumber
+[2020/03/21 12:02:23.272] - eth_estimateGas
+[2020/03/21 12:02:23.302] - eth_getBlockByNumber
+[2020/03/21 12:02:23.309] - eth_blockNumber
+[2020/03/21 12:02:23.344] - eth_sendTransaction
+[2020/03/21 12:02:23.415] - eth_getBalance
+[2020/03/21 12:02:23.552] - 
+[2020/03/21 12:02:23.554] -   Transaction: 0xaa2dbe73c850b796738d3dc52fb5eb3eb70090c67e557180a51bffd8e97bddd8
+[2020/03/21 12:02:23.554] -   Contract created: 0x2f8a2c47f42a126dcd7076f8d19edf5e35e05594
+[2020/03/21 12:02:23.555] -   Gas usage: 923961
+[2020/03/21 12:02:23.555] -   Block Number: 192
+[2020/03/21 12:02:23.556] -   Block Time: Sat Mar 21 2020 12:02:23 GMT+0000 (GMT)
+[2020/03/21 12:02:23.556] - 
+[2020/03/21 12:02:23.567] - eth_getTransactionReceipt
+[2020/03/21 12:02:23.601] - eth_getCode
+[2020/03/21 12:02:23.621] - eth_getTransactionByHash
+[2020/03/21 12:02:23.638] - eth_getTransactionCount
+[2020/03/21 12:02:23.647] - eth_getBlockByNumber
+[2020/03/21 12:02:23.664] - eth_getBalance
+[2020/03/21 12:02:23.673] - eth_getBlockByNumber
+[2020/03/21 12:02:23.779] - eth_getBlockByNumber
+[2020/03/21 12:02:23.810] - eth_getBlockByNumber
+[2020/03/21 12:02:23.817] - eth_sendTransaction
+[2020/03/21 12:02:23.868] - eth_getBalance
+[2020/03/21 12:02:23.951] - 
+[2020/03/21 12:02:23.952] -   Transaction: 0xf0cb26ab74af0c531236c80243966de1de36c866f1b77294c6d5610837a415a2
+[2020/03/21 12:02:23.955] -   Gas usage: 27001
+[2020/03/21 12:02:23.962] -   Block Number: 193
+[2020/03/21 12:02:23.963] -   Block Time: Sat Mar 21 2020 12:02:23 GMT+0000 (GMT)
+[2020/03/21 12:02:23.963] - 
+[2020/03/21 12:02:23.975] - eth_getBlockByNumber
+[2020/03/21 12:02:23.976] - eth_getTransactionReceipt
+[2020/03/21 12:02:24.285] - eth_getTransactionCount
+[2020/03/21 12:02:24.473] - eth_getBalance
+[2020/03/21 12:02:24.649] - eth_getTransactionCount
+[2020/03/21 12:02:24.752] - eth_getBalance
+[2020/03/21 12:02:24.910] - eth_getTransactionCount
+[2020/03/21 12:02:25.032] - eth_getBalance
+[2020/03/21 12:02:25.081] - eth_getTransactionCount
+[2020/03/21 12:02:25.304] - eth_getBalance
+[2020/03/21 12:02:25.447] - eth_getTransactionCount
+[2020/03/21 12:02:25.583] - eth_getBalance
+[2020/03/21 12:02:25.704] - eth_getTransactionCount
+[2020/03/21 12:02:25.878] - eth_getBalance
+[2020/03/21 12:02:25.993] - eth_getTransactionCount
+[2020/03/21 12:02:26.081] - eth_getBalance
+[2020/03/21 12:02:26.147] - eth_getTransactionCount
+[2020/03/21 12:02:26.203] - eth_getBalance
+[2020/03/21 12:02:26.275] - eth_getTransactionCount
+[2020/03/21 12:02:26.331] - eth_getBalance
+[2020/03/21 12:02:26.382] - eth_getTransactionCount
+[2020/03/21 12:02:26.502] - eth_getBalance
+[2020/03/21 12:02:26.662] - eth_getTransactionCount
+[2020/03/21 12:02:26.828] - eth_getBalance
+[2020/03/21 12:02:26.982] - eth_getTransactionCount
+[2020/03/21 12:02:27.115] - eth_getBalance
+[2020/03/21 12:02:27.296] - eth_getTransactionCount
+[2020/03/21 12:02:27.361] - eth_getBalance
+[2020/03/21 12:02:27.408] - eth_getTransactionCount
+[2020/03/21 12:02:36.689] - eth_getBalance
+[2020/03/21 12:02:36.762] - eth_getTransactionCount
+[2020/03/21 12:02:36.832] - eth_getBalance
+[2020/03/21 12:02:36.889] - eth_getTransactionCount
+[2020/03/21 12:02:36.956] - eth_getBalance
+[2020/03/21 12:02:37.044] - eth_getTransactionCount
+[2020/03/21 12:02:37.111] - eth_getBalance
+[2020/03/21 12:02:37.174] - eth_getTransactionCount
+[2020/03/21 12:02:37.241] - eth_getBalance
+[2020/03/21 12:02:37.302] - eth_getTransactionCount
+[2020/03/21 12:02:37.389] - eth_getBalance
+[2020/03/21 12:02:37.454] - eth_getTransactionCount
+[2020/03/21 12:02:37.455] - eth_blockNumber
+[2020/03/21 12:02:37.466] - eth_getBlockByNumber
+[2020/03/21 12:02:37.526] - eth_getBalance
+[2020/03/21 12:02:37.617] - eth_getTransactionCount
+[2020/03/21 12:02:37.693] - eth_getBalance
+[2020/03/21 12:02:37.784] - eth_getTransactionCount
+[2020/03/21 12:02:37.852] - eth_getBalance
+[2020/03/21 12:02:37.923] - eth_getTransactionCount
+[2020/03/21 12:02:37.988] - eth_getBalance
+[2020/03/21 12:02:38.054] - eth_getTransactionCount
+[2020/03/21 12:02:38.086] - eth_blockNumber
+[2020/03/21 12:02:38.093] - eth_getBlockByNumber
+[2020/03/21 12:02:39.200] - eth_getBalance
+[2020/03/21 12:02:39.259] - eth_getTransactionCount
+[2020/03/21 12:02:39.325] - eth_getTransactionCount
+[2020/03/21 12:02:39.412] - eth_getBalance
+[2020/03/21 12:02:39.467] - eth_getTransactionCount
+[2020/03/21 12:02:39.530] - eth_getBalance
+[2020/03/21 12:02:39.602] - eth_getTransactionCount
+[2020/03/21 12:02:39.716] - eth_getBalance
+[2020/03/21 12:02:39.875] - eth_getTransactionCount
+[2020/03/21 12:02:39.971] - eth_getBalance
+[2020/03/21 12:02:40.050] - eth_getTransactionCount
+[2020/03/21 12:02:40.114] - eth_getBalance
+[2020/03/21 12:02:40.178] - eth_getTransactionCount
+[2020/03/21 12:02:40.232] - eth_getBalance
+[2020/03/21 12:02:40.293] - eth_getTransactionCount
+[2020/03/21 12:02:40.358] - eth_getBalance
+[2020/03/21 12:02:40.424] - eth_getTransactionCount
+[2020/03/21 12:02:40.496] - eth_getBalance
+[2020/03/21 12:02:40.569] - eth_getTransactionCount
+[2020/03/21 12:02:40.653] - eth_unsubscribe
+[2020/03/21 12:02:40.654] - eth_unsubscribe
+[2020/03/21 12:02:41.541] - Warning: stopMining called when miner was already stopped

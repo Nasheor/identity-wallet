@@ -38,7 +38,7 @@ const routes = [
       },
     ]
   },
-  { path: "*", redirect: "/home/credentials" }
+  { path: "*", redirect: "/home/credentials", component: Credentials }
 ]
 
 const router = new VueRouter({

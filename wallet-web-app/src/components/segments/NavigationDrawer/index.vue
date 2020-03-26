@@ -30,7 +30,7 @@
         <v-app-bar
             :clipped-left="$vuetify.breakpoint.lgAndUp"
             app
-            darks
+            dark
         >
             <v-toolbar-title
                 style="width: 300px"
@@ -38,17 +38,18 @@
             >
                 <v-app-bar-nav-icon color="white" @click.stop="updateDrawer"></v-app-bar-nav-icon>
             </v-toolbar-title>
-            <v-text-field
+            <!-- <v-text-field
                 flat
                 solo-inverted
                 hide-details
                 label="Search"
                 class="hidden-sm-and-down"
-            ></v-text-field>
+                v-model="searchTerm"
+            > {{activeAccount}}</v-text-field> -->
+            <v-card-subtitle class=" headline ma-12">
+                {{activeAccount}}
+            </v-card-subtitle>
             <v-spacer></v-spacer>
-            <v-btn icon>
-                <v-icon color="white">mdi-email</v-icon>
-            </v-btn>
             <v-btn @click="logout" icon>
                 <v-icon color="white">mdi-logout</v-icon>
             </v-btn>

@@ -45,6 +45,7 @@ export default {
             let credentialPhone = this.phone;
             let active = true;
             ipfs.add(this.buffer).then((hashedImg) => {
+                console.log(hashedImg[0].hash);
                 let token = sha256(hashedImg[0].hash+cap)
                 this.drizzleInstance
                 .contracts["CredentialHandler"]

@@ -1,5 +1,5 @@
 import Login from "@/contracts/Login.json";
-import FileHandler from "@/contracts/FileHandler.json";
+import CredentialHandler from "@/contracts/CredentialHandler.json";
 import Attestation from "@/contracts/Attestation.json";
 
 const options = {
@@ -10,11 +10,11 @@ const options = {
         url: "ws://127.0.0.1:7545"
       }
     },// The contracts to monitor
-    contracts: [Login, FileHandler, Attestation],
+    contracts: [Login, CredentialHandler, Attestation],
     events: {
-      FileHandler: [
+      CredentialHandler: [
         {
-          eventName: 'NewFile',
+          eventName: 'NewCredential',
           eventOptions: { fromBlock: 0 }
         }
       ],

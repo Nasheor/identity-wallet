@@ -7,14 +7,18 @@
             justify="start"
           >
             <CredentialCard
-              v-for="credential in getCredentials"
+              v-show="isloaded"
+              v-for="(credential, index) in getCredentials"
               :key="credential['phone']"
               v-bind:email="credential['email']"
               v-bind:purpose="credential['name']"
               v-bind:phone="credential['phone']"
               v-bind:active="credential['active']"
               v-bind:address="credential['address']"
-              v-bind:verified="credential['verified']"
+              v-bind:file_hash="credential['file']"
+              v-bind:file_text="credential['caption']"
+              v-bind:token="credential['token']"
+              v-bind:index="index"
               class="ma-3 pa-2"
               outlined
               tile

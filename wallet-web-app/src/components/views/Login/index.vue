@@ -1,5 +1,5 @@
 <template>
-<v-content v-if="getLoginStatus === false || getLoginStatus === 'false'">
+<v-content v-if="getLoginStatus === false || getLoginStatus === 'false' || getLoginStatus === null">
     <v-container
         fluid
         fill-height
@@ -38,7 +38,10 @@
             </v-flex>
         </v-layout>
     </v-container>
-</v-content>    
+</v-content>  
+<v-content v-else>
+    <p> This is fucking things up </p>
+</v-content>  
 </template>
  <script src='./Login.js' />
  <style scoped lang="scss" src="./Login.scss"></style>
