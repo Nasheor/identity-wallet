@@ -31,6 +31,12 @@ export default new Vuex.Store({
     },
     incrementNotificationCounter(state, payload) {
       state.notification_counter += payload; 
+    },
+    setCredentialKeys(state, payload) {
+      payload.map(credential => {
+        if(credential['name'] != null)
+          state.keys.push(credential['name']);
+      });
     }
   },
   getters: {
@@ -52,11 +58,8 @@ export default new Vuex.Store({
       }));
       return data;
     },
-    getCredentialKeys(state) {
-      state.credentials.map(credential => {
-        state.keys.push(credential['name']);
-      })
-      return state.keys;
+    getCredentials(state) {
+      return state.credentials;
     }
   }
 });

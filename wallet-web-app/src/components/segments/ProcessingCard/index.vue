@@ -22,7 +22,7 @@
                     VERIFICATION STATUS
                 </v-list-item-title>
                 <v-card-subtitle>
-                    Not Done
+                    <v-icon>mdi-close-box</v-icon>
                 </v-card-subtitle>
             </v-list-item>
             <v-list-item>

@@ -1,6 +1,7 @@
 import Login from "@/contracts/Login.json";
 import CredentialHandler from "@/contracts/CredentialHandler.json";
 import Attestation from "@/contracts/Attestation.json";
+import TokenHandler from "@/contracts/TokenHandler.json";
 
 const options = {
     web3: {
@@ -10,19 +11,11 @@ const options = {
         url: "ws://127.0.0.1:7545"
       }
     },// The contracts to monitor
-    contracts: [Login, CredentialHandler, Attestation],
+    contracts: [Login, CredentialHandler, Attestation, TokenHandler],
     events: {
       CredentialHandler: [
-        {
-          eventName: 'NewCredential',
-          eventOptions: { fromBlock: 0 }
-        }
       ],
       Attestation: [
-        {
-          eventName: 'NewAttestant',
-          eventOptions: { fromBlock: 0 }
-        }
       ],
     },
     polls: {

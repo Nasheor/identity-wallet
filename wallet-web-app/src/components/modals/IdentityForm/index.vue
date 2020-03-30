@@ -9,18 +9,15 @@
             wrap
         >
             <v-flex
-            xs12
-            align-center
-            justify-space-between
+                xs12
+                align-center
+                justify-space-between
             >
-            <v-layout align-center>
-
                 <v-text-field
-                    prepend-icon="mdi-name"
+                    prepend-icon="mdi-account"
                     placeholder="Name"
                     v-model = "name"
                 ></v-text-field>
-            </v-layout>
             </v-flex>
             <v-flex xs6>
                 <v-text-field
@@ -59,10 +56,6 @@
             @click="submit"
         >Save</v-btn>
         </v-card-actions>
-        <v-card class="ma-1 green darken-7 rowss" v-if="getSave===true"> 
-            <v-card-text> Successfully Stored! You'll get a notification upon verification </v-card-text>
-            <v-btn @click="closeConfirmation" class="mt-2 mr-2"> X </v-btn>
-        </v-card>
     </v-card>
 </template>
  <script src='./IdentityForm.js' />

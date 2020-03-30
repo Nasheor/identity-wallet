@@ -15,100 +15,92 @@ export default{
             page: 1,
             itemsPerPage: 8,
             sortBy: 'name',
-            keys: [
-                'Name',
-                'Email',
-                'DOB',
-                'Nationality',
-                'Gender',
-                'Employment',
+            sort_list: [
+                "Employer",
+                "Colleague",
+                "Bank Account Manager",
+                "Doctor",
+                "Government",
+                "Other",
             ],
+            keys: [],
             items: [
                 {
                     name: 'Frozen Yogurt',
                     email: 'aaa@aaa.com',
-                    dob: 159,
-                    nationality: 6.0,
-                    gender: 24,
-                    employment: 4.0,
+                    verified: true,
+                    relationship: 'Government Body',
+                    credentials: [],
+
                 },
                 {
                     name: 'Ice cream',
                     email: 'jjj@jjj.com',
-                    dob: 159,
-                    nationality: 6.0,
-                    gender: 24,
-                    employment: 4.0,
+                    verified: false,
+                    relationship: 'Colleague',
+                    credentials: []    
                 },
                 {
                     name: 'Eclair',
                     email: 'iii@iii.com',
-                    dob: 159,
-                    nationality: 6.0,
-                    gender: 24,
-                    employment: 4.0,
+                    verified: true,
+                    relationship: 'Bank Account Manager',
+                    credentials: []    
                 },
                 {
                     name: 'Cupcake',
                     email: 'hhh@hhh.com',
-                    dob: 159,
-                    nationality: 6.0,
-                    gender: 24,
-                    employment: 4.0,
+                    verified: false,
+                    relationship: 'Doctor',
+                    credentials: []    
                 },
                 {
                     name: 'Gingerbread',
                     email: 'ggg@ggg.com',
-                    dob: 159,
-                    nationality: 6.0,
-                    gender: 24,
-                    employment: 4.0,
+                    verified: false,
+                    relationship: 'Other',
+                    credentials: []    
                 },
                 {
                     name: 'Jelly bean',
                     email: 'fff@fff.com',
-                    dob: 159,
-                    nationality: 6.0,
-                    gender: 24,
-                    employment: 4.0,
+                    verified: false,
+                    relationship: 'Colleague',
+                    credentials: []    
                 },
                 {
                     name: 'Lollipop',
                     email: 'eee@eee.com',
-                    dob: 159,
-                    nationality: 6.0,
-                    gender: 24,
-                    employment: 4.0,
+                    verified: true,
+                    relationship: 'Government Body',
+                    credentials: []    
                 },
                 {
                     name: 'Honeycomb',
                     email: 'ddd@ddd.com',
-                    dob: 159,
-                    nationality: 6.0,
-                    gender: 24,
-                    employment: 4.0,
+                    verified: true,
+                    relationship: 'Government Body',
+                    credentials: []    
                 },
                 {
                     name: 'Donut',
                     email: 'ccc@ccc.com',
-                    dob: 159,
-                    nationality: 6.0,
-                    gender: 24,
-                    employment: 4.0,
+                    verified: false,
+                    relationship: 'Colleague',
+                    credentials: []    
                 },
                 {
                     name: 'KitKat',
                     email: 'bbb@bbb.com',
-                    dob: 159,
-                    nationality: 6.0,
-                    gender: 24,
-                    employment: 4.0,
+                    verified: false,
+                    relationship: 'Other',
+                    credentials: []    
                 },
             ],
             }
       },
       computed: {
-        ...mapGetters(['getCredentialKeys']),
+        ...mapGetters(['getCredentials']),
         numberOfPages () {
           return Math.ceil(this.items.length / this.itemsPerPage)
         },
@@ -127,7 +119,12 @@ export default{
           this.itemsPerPage = number
         },
       },
-      mounted() {
-          // populate keys with Credential names received from the store
-      }
+      async created() {
+        this.getCredentials.map(credential => {
+            if(credential['active']===true) {
+                this.keys.push(credential['name']);
+                this.sort_list.push(credential['name']);
+            }
+        });
+    }
 }

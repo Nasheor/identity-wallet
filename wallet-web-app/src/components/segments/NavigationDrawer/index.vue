@@ -46,9 +46,9 @@
                 class="hidden-sm-and-down"
                 v-model="searchTerm"
             > {{activeAccount}}</v-text-field> -->
-            <v-card-subtitle class=" headline ma-12">
+            <!-- <v-card-subtitle class=" headline ma-12">
                 {{activeAccount}}
-            </v-card-subtitle>
+            </v-card-subtitle> -->
             <v-spacer></v-spacer>
             <v-btn @click="logout" icon>
                 <v-icon color="white">mdi-logout</v-icon>

@@ -12,15 +12,11 @@ export default {
             caption: '',
             counter: 0,
             buffer: '',
-            save: false,
         }
     },
     computed: {
         ...mapGetters('drizzle', ['drizzleInstance', 'isDrizzleInitialized']),
         ...mapGetters('contracts', ['getContractData']),
-        getSave() {
-            return this.save;
-        }
       },
     methods: {
         filePicked(file) {
@@ -69,11 +65,5 @@ export default {
                 console.log("Drizzle Problem");
             }
         },
-        closeConfirmation() {
-            this.save = false;
-        },
-    },
-    mounted() {
-        this.save = false;
     },
 }

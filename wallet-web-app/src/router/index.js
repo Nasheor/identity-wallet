@@ -5,7 +5,7 @@ import Home from '../components/views/Home'
 import Credentials from '../components/sections/Credentials'
 import Attestations from '../components/sections/Attestations'
 import Processing from '../components/sections/Processing'
-import Settings from '../components/sections/Settings'
+import Token from '../components/sections/Token'
 
 Vue.use(VueRouter)
 
@@ -33,8 +33,8 @@ const routes = [
         component: Processing
       },
       {
-        path: 'settings',
-        component: Settings
+        path: 'token',
+        component: Token
       },
     ]
   },

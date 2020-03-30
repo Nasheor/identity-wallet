@@ -19,7 +19,6 @@ contract CredentialHandler {
     mapping(uint256 => Credential) public credentials;
     uint256 credential_ctr;
 
-    event NewCredential();
     function setCredential(string memory _name, string memory _email, 
             string memory _phone, bool _active, string memory _fileHash, 
             string memory _caption, string memory _token) public {
@@ -33,7 +32,6 @@ contract CredentialHandler {
         newbie.fileHash = _fileHash;
         newbie.caption = _caption;
         newbie.token = _token;
-        emit NewCredential();
     }
 
     function getCredential(uint256 _index)

@@ -1,6 +1,6 @@
 import { mapGetters } from 'vuex';
-import ipfs from '../../../plugins/ipfs-config';
-import { sha256 } from 'js-sha256';
+// import ipfs from '../../../plugins/ipfs-config';
+// import { sha256 } from 'js-sha256';
 
 export default {
     data() {
@@ -9,18 +9,26 @@ export default {
             name: '',
             email: '',
             phone: '',
-            caption: '',
-            counter: 0,
-            buffer: '',
-            save: false,
+            verified: 0,
+            relationship: '',
+            relationship_list: [
+                "Employer",
+                "Colleague",
+                "Bank Account Manager",
+                "Doctor",
+                "Government",
+                "Other",
+            ],
+            credentials: [],
+            attesting: []
         }
     },
     computed: {
         ...mapGetters('drizzle', ['drizzleInstance', 'isDrizzleInitialized']),
+        ...mapGetters([
+            "getCredentials"
+        ]),
         ...mapGetters('contracts', ['getContractData']),
-        getSave() {
-            return this.save;
-        }
       },
     methods: {
         filePicked(file) {
@@ -38,34 +46,30 @@ export default {
         },
         submit() {
             if (this.isDrizzleInitialized) {
-            this.dialog = false;
-            let cap = this.caption;
-            let credentialName = this.name;
-            let credentialEmail = this.email;
-            let credentialPhone = this.phone;
-            let active = true;
-            ipfs.add(this.buffer).then((hashedImg) => {
-                console.log(hashedImg[0].hash);
-                let token = sha256(hashedImg[0].hash+cap)
+                let att_name = this.name;
+                let att_email = this.email;
+                let att_phone = this.phone;
+                let att_attesting = this.attesting;
+                let att_relationship = this.relationship;
+                let verified = false;
+                if(att_relationship === "Government")
+                    verified = true;
                 this.drizzleInstance
-                .contracts["CredentialHandler"]
-                .methods["setCredential"]
-                .cacheSend(credentialName, credentialEmail,
-                    credentialPhone, active,
-                    hashedImg[0].hash, cap, token);
-            });
-            this.caption = '';
-            this.file = '';
-            this.name = '';
-            this.email = '';
-            this.phone = '';
-            this.buffer = '';
-            this.save = true;
-            this.$notify({
-                group: 'foo',
-                title: 'Notification',
-                text: "Tokenizing the credential"
-              });
+                .contracts["Attestation"]
+                .methods["setAttestion"]
+                .cacheSend(att_name, att_email, att_phone,
+                           verified, att_relationship, att_attesting 
+                        );
+                this.name = '';
+                this.email = '';
+                this.phone = '';
+                this.attesting = [];
+                this.relationship= '';
+                this.$notify({
+                    group: 'foo',
+                    title: 'Notification',
+                    text: "Successfully Added! Attestant will have to confirm the claims"
+                });
             } else {
                 console.log("Drizzle Problem");
             }
@@ -77,4 +81,10 @@ export default {
     mounted() {
         this.save = false;
     },
+    async created() {
+        this.getCredentials.map(credential => {
+            if(credential['active']===true)
+                this.credentials.push(credential['name']);
+        });
+    }
 }

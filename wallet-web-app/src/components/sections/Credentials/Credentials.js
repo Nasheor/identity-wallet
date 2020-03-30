@@ -45,6 +45,7 @@ export default {
                 }   
                 this.credentials = data;
                 this.$store.commit("setCredentials", this.credentials);
+                this.$store.commit("setCredentialKeys", this.credentials);
                 this.loaded = true;  
                 return this.credentials;     
               } else {
