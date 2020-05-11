@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { credentials_args } from '../../../utils/args';
 
 export default {
     props: ["purpose", "email", 
@@ -33,12 +34,31 @@ export default {
                 const url = window.URL.createObjectURL(new Blob([response.data]))
                 const link = document.createElement('a')
                 link.href = url
-                link.setAttribute('download', 'file.pdf') //or any other extension
+                link.setAttribute('download', this.file_text+'.pdf') //or any other extension
                 document.body.appendChild(link);
                 link.click();                
               })
               .catch(() => console.log('error occured'))
         },
+        releaseToken() {
+            if(this.isDrizzleInitialized) {
+                let count = this.index+1; 
+                credentials_args.methodArgs[0] = count;
+                this.$store.dispatch('drizzle/REGISTER_CONTRACT', credentials_args);
+                this.drizzleInstance
+                    .contracts["CredentialHandler"]
+                    .methods["releaseToken"]
+                    .cacheSend(count);
+                let data = this.getContractData({
+                    contract: credentials_args.contractName,
+                    method: credentials_args.method,
+                    methodArgs: credentials_args.methodArgs
+                });
+                this.$store.commit("setOppActiveStatusCredential", this.index);
+                console.log(count);
+                console.log(data);          
+           }
+        }
     },
     mounted() {
         this.ipfs_file_path += this.file_address;

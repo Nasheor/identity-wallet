@@ -1,9 +1,7 @@
-pragma solidity 0.5.16;
-import "@openzeppelin/contracts/token/ERC721/ERC721Full.sol";
+pragma solidity >=0.5.16;
+
 
 contract CredentialHandler {
-
-    using SafeMath for uint256;
 
     struct Credential {
         address owner;
@@ -22,7 +20,7 @@ contract CredentialHandler {
     function setCredential(string memory _name, string memory _email, 
             string memory _phone, bool _active, string memory _fileHash, 
             string memory _caption, string memory _token) public {
-        credential_ctr = credential_ctr.add(1);
+        credential_ctr = credential_ctr + 1;
         Credential storage newbie = credentials[credential_ctr];
         newbie.owner = msg.sender;
         newbie.name = _name;
@@ -57,6 +55,10 @@ contract CredentialHandler {
 
     function revokeToken(uint256 _index) public {
             credentials[_index].active = false;
+        }
+
+    function releaseToken(uint256 _index) public {
+            credentials[_index].active = true;
         }
 
     function getCounter() 

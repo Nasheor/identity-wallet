@@ -16,6 +16,18 @@
         <v-card-subtitle class="overline">
             Token {{ credential_token }}
         </v-card-subtitle>
+
+        <v-card-actions>  
+            <v-btn
+                @click="releaseToken"
+                color="purple"
+                text
+            >
+                Release Token
+            </v-btn> 
+        </v-card-actions>
+
+
         <v-list shaped>
             <v-list-item>
                 <v-list-item-title>

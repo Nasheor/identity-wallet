@@ -36,7 +36,9 @@
                 style="width: 300px"
                 class="ml-0 pl-3"
             >
-                <v-app-bar-nav-icon color="white" @click.stop="updateDrawer"></v-app-bar-nav-icon>
+                <v-app-bar-nav-icon color="white" @click.stop="updateDrawer">
+                    <v-icon>mdi-format-list-bulleted-square</v-icon>
+                </v-app-bar-nav-icon>
             </v-toolbar-title>
             <!-- <v-text-field
                 flat

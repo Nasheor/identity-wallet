@@ -1,9 +1,7 @@
 <template>
-    <v-container class="d-flex align-center">
+    <v-container class="d-flex" v-if="isDrizzleInitialized">
         <v-card dark shaped fluid>
             <v-card-title>
-                Tokens
-                <v-spacer></v-spacer>
                 <v-text-field
                     v-model="search"
                     append-icon="mdi-magnify"
@@ -15,17 +13,48 @@
             <v-data-table
                 dark
                 :headers="headers"
-                :items="desserts"
+                :items="getTokens"
+                :items-per-page=5
                 :search="search"
-            ></v-data-table>
+                multi-sort
+                no-results-text
+                :expanded.sync="expanded"
+                show-expand
+                class="elevation-1"
+            >
+                <template v-slot:expanded-item="{ headers, item }">
+                <v-divider></v-divider>
+                    <v-list class="d-flex" shaped>
+                        <v-list-item>
+                            <v-list-item-title class="overline">
+                                TOKEN
+                            </v-list-item-title>
+                            <v-card-subtitle class="overline">
+                                {{item.token_hash}}
+                            </v-card-subtitle>
+                        </v-list-item>
+                    </v-list>
+                </template>          
+            </v-data-table>
         </v-card>
-        <v-card class="ml-4"> 
+        <v-card shaped class="ml-4" max-height="470"> 
             <v-card-title >Generate Token</v-card-title>
+            <v-flex
+                xs12
+                align-center
+                justify-space-between
+            >
+                <v-text-field
+                    class="ml-4"
+                    placeholder="Name"
+                    v-model = "token_name"
+                ></v-text-field>
+            </v-flex>
             <v-row class="pl-4">
                 <v-col cols="12">
                     <v-combobox
-                        v-model="select"
-                        :items="items"
+                        v-model="selected_credentials"
+                        :items="credentials"
                         label="Choose Credentials"
                         multiple
                         chips
@@ -55,15 +84,15 @@
                         flat
                         inset
                         color="blue"
-                    />                 
-                </v-col>    
-                <v-col v-show="getVisiblity===true" cols="12" sm="6">
+                    />             
                     <v-select
+                        v-show="getVisiblity===true"
+                        v-model="token_file"
                         :items="files"
                         label="Choose File To Show"
                         dense
                         outlined
-                    ></v-select>
+                    ></v-select>   
                 </v-col>     
             </v-row>
             <v-card-actions>

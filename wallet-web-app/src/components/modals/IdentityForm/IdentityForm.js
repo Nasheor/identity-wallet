@@ -16,7 +16,6 @@ export default {
     },
     computed: {
         ...mapGetters('drizzle', ['drizzleInstance', 'isDrizzleInitialized']),
-        ...mapGetters('contracts', ['getContractData']),
       },
     methods: {
         filePicked(file) {

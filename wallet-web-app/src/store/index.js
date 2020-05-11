@@ -10,7 +10,6 @@ export default new Vuex.Store({
     num_credentials: '',
     credentials: [],
     keys: [],
-
   },
   mutations: {
     changeLogStatus(state, payload) {
@@ -28,6 +27,9 @@ export default new Vuex.Store({
     },
     setActiveStatusCredential(state, payload) {
       state.credentials[payload].active = false;
+    },
+    setOppActiveStatusCredential(state, payload) {
+      state.credentials[payload].active = true;
     },
     incrementNotificationCounter(state, payload) {
       state.notification_counter += payload; 

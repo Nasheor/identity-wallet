@@ -8,7 +8,8 @@
       </div>
     </v-app-bar>
     <v-content v-if="login===true || login==='true'">
-      <Home />
+      <Home 
+      />
       <notifications group="foo" position="top right" />
     </v-content>
     <v-content v-else>

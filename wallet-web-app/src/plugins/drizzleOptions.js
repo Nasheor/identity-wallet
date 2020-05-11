@@ -17,10 +17,13 @@ const options = {
       ],
       Attestation: [
       ],
+      TokenHandler: [
+
+      ],
     },
     polls: {
       // check accounts ever 15 seconds
-      accounts: 5000
+      accounts: 1000
     }
   };
   export default options;

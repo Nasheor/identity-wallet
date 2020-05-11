@@ -20,7 +20,9 @@ export default{
                 "Colleague",
                 "Bank Account Manager",
                 "Doctor",
+                "Utilities",
                 "Government",
+                "Trusted Node",
                 "Other",
             ],
             keys: [],
@@ -57,8 +59,8 @@ export default{
                 {
                     name: 'Gingerbread',
                     email: 'ggg@ggg.com',
-                    verified: false,
-                    relationship: 'Other',
+                    verified: true,
+                    relationship: 'Tursted Node',
                     credentials: []    
                 },
                 {
@@ -83,10 +85,10 @@ export default{
                     credentials: []    
                 },
                 {
-                    name: 'Donut',
+                    name: 'Just Eat',
                     email: 'ccc@ccc.com',
                     verified: false,
-                    relationship: 'Colleague',
+                    relationship: 'Utilities',
                     credentials: []    
                 },
                 {

@@ -1,121 +1,118 @@
+import { mapGetters } from 'vuex';
+import { sha256 } from 'js-sha256';
+import { token_args, counter_token_args } from '../../../utils/args';
+
 export default {
     data () {
         return {
           search: '',
+          selected: [],
+          token_name: '',
+          selected_credentials: [],
+          token_file: '',
           visiblity: false,
-          files:["Passport", "Birth Certificate"],
-          select: ['Vuetify', 'Programming'],
-          items: [
-            'Programming',
-            'Design',
-            'Vue',
-            'Vuetify',
-          ],
+          files:[],
+          credentials: [],
+          counter: 0,
           headers: [
             {
-              text: 'Dessert (100g serving)',
+              text: 'Name',
               align: 'start',
               sortable: false,
               value: 'name',
             },
-            { text: 'Calories', value: 'calories' },
-            { text: 'Fat (g)', value: 'fat' },
-            { text: 'Carbs (g)', value: 'carbs' },
-            { text: 'Protein (g)', value: 'protein' },
-            { text: 'Iron (%)', value: 'iron' },
+            { text: 'Timestamp', value: 'timestamp' },
+            { text: 'File', value: 'file_hash' },
           ],
-          desserts: [
-            {
-              name: 'Frozen Yogurt',
-              calories: 159,
-              fat: 6.0,
-              carbs: 24,
-              protein: 4.0,
-              iron: '1%',
-            },
-            {
-              name: 'Ice cream sandwich',
-              calories: 237,
-              fat: 9.0,
-              carbs: 37,
-              protein: 4.3,
-              iron: '1%',
-            },
-            {
-              name: 'Eclair',
-              calories: 262,
-              fat: 16.0,
-              carbs: 23,
-              protein: 6.0,
-              iron: '7%',
-            },
-            {
-              name: 'Cupcake',
-              calories: 305,
-              fat: 3.7,
-              carbs: 67,
-              protein: 4.3,
-              iron: '8%',
-            },
-            {
-              name: 'Gingerbread',
-              calories: 356,
-              fat: 16.0,
-              carbs: 49,
-              protein: 3.9,
-              iron: '16%',
-            },
-            {
-              name: 'Jelly bean',
-              calories: 375,
-              fat: 0.0,
-              carbs: 94,
-              protein: 0.0,
-              iron: '0%',
-            },
-            {
-              name: 'Lollipop',
-              calories: 392,
-              fat: 0.2,
-              carbs: 98,
-              protein: 0,
-              iron: '2%',
-            },
-            {
-              name: 'Honeycomb',
-              calories: 408,
-              fat: 3.2,
-              carbs: 87,
-              protein: 6.5,
-              iron: '45%',
-            },
-            {
-              name: 'Donut',
-              calories: 452,
-              fat: 25.0,
-              carbs: 51,
-              protein: 4.9,
-              iron: '22%',
-            },
-            {
-              name: 'KitKat',
-              calories: 518,
-              fat: 26.0,
-              carbs: 65,
-              protein: 7,
-              iron: '6%',
-            },
-          ],
+          tokens: [],
+          expanded: [],
         }
     }, 
     computed: {
-        getVisiblity() {
-            return this.visiblity;
-        }
+      ...mapGetters('drizzle', ['drizzleInstance', 'isDrizzleInitialized']),
+      ...mapGetters('contracts', ['getContractData']),
+      ...mapGetters([
+        "getCredentials"
+      ]),
+      getVisiblity() {
+          return this.visiblity;
+      },
+      getTokens() {
+        if(this.isDrizzleInitialized) {
+          // Retrieving the counter which is the number of credentials of a user on ethereum
+          this.counter = this.getContractData({
+            contract: counter_token_args.contractName,
+            method: counter_token_args.method,
+            methodArgs: counter_token_args.methodArgs
+          });
+          // Retrieving the data of the credentials and respective file associated 
+          // with the user and populating it locally
+          let data = []
+          for(let i = 1; i <= this.counter; i++ ) {
+              // Updating the arguments for the contract method call
+              // before dispatching it to the store
+              token_args.methodArgs[0] = i;
+              this.$store.dispatch('drizzle/REGISTER_CONTRACT', token_args);
+              data.push(this.getContractData({
+                  contract: token_args.contractName,
+                  method: token_args.method,
+                  methodArgs: token_args.methodArgs
+              })); 
+          }
+          console.log(data);   
+          this.tokens = data;
+          return this.tokens;     
+        } else {
+          console.log("Drizzle still initializing");
+        }                    
+      }
     },
     methods: {
         submit() {
-            console.log("Submit Token");
+            if(this.isDrizzleInitialized) {
+              let name = this.token_name;
+              let credentials_data = this.selected_credentials.join('-');
+              let file_address = '';
+              let file = '';
+              if(this.visiblity === true) {
+                file = this.token_file;
+                this.getCredentials.map(credential => {
+                  if(credential['caption'] === file){
+                    file_address = credential['file'];
+                  }
+                });
+              }
+              let timestamp_data = JSON.stringify(Math.floor(Date.now() / 1000));
+              let token_hash = this.generateToken(credentials_data+name+file+timestamp_data+file_address);
+              this.drizzleInstance
+              .contracts["TokenHandler"]
+              .methods["setToken"]
+              .cacheSend(name, token_hash,
+                  file, file_address, 
+                  credentials_data, timestamp_data);
+
+              this.token_name = '';
+              this.selected_credentials = [];
+              this.visiblity = false;
+              this.token_file = '';
+            } else {  
+              console.log("Drizzle Not Initialized");
+            }
         },
+        generateToken(data) {
+          return sha256(data);
+        }
+    },
+    created() {
+      this.$store.dispatch('drizzle/REGISTER_CONTRACT', counter_token_args);   
+      this.getCredentials.map(credential => {
+          if(credential['active']===true)
+              this.credentials.push(credential['name']);
+      });
+      this.getCredentials.map(credential => {
+          this.files.push(credential['caption']);
+      });     
+      
+      console.log(this.getTokens);
     }   
 }
