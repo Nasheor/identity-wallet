@@ -5,7 +5,7 @@ This prototype was developed as a proof of concept as to how distributed computi
 The aim of the Identity management solution is to build transparency and trust in an environment where the privacy of a user's data is protected and the user's control over the data in regards to who can access it and what parts of the data that the external entity can view and store. How well the blockchain solution performs in providing a truly decentralized, transparent and immutable environment.
 
 ## Architecture
-![Digital Identity Management Solution](https://ibb.co/ykz9BLy)
+![Digital Identity Management Solution](https://i.ibb.co/R6XF4L0/final-architecture.png)
 
 ## Technologies Used
 1. Solidity
