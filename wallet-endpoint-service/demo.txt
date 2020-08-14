@@ -1,0 +1,17 @@
+Hello
+I'm going to start the identity wallet and voting platform now
+While the server is setting up on ports 8070 and 8090 respectively, I've started the local Ethereum blockchain via Ganache running on port 7545
+Now I'm also going to start the go microservice which exposes the login endpoint and talks to the ethereum blockchain and third party applications
+As you can see as soon the dApp running on port 8070 and 8090 is accessed metamask is spawned to verify the instance of the application and the id of the user trying to access it. Once this step is done, the user will have to enter their wallet key to login. For the pupose of demo I have already created temporary accounts on the ethereum. The key entered into the wallet is verified using public private key cryptography. 
+Upon login, the user can view four sections: Credentials, Attestations, Processing and Tokens. Credentails is where all the master currents identity tokens are displayed. Attestations is the place where all the attestants for a particular identity token are displayed, Processing is the place where tokens yet to be verified by a trusted node is displayed and Tokens is the section where we can generate temporary tokens from master tokens with differential information display permissions can be set by the user before using it with third party applications and services. Lets go through each section on by one. 
+I'm tokenizing my passport to verify Country.
+Now the token has been created representing my country. Revoking token will make it inactive and not useable
+The Attestations section is where people attesting your credential, their information is displayed. This helps prove the credibility of the credential
+You can also add an attestation from here
+Moving on to processing, is where tokens yet to be verified will be displayed. They are moved to credentials section upon verification by a trusted node. 
+The tokens section is where you can generate and view temporary tokens geenrated from parents master credential tokens
+
+Now lets the temporary token All in One from the wallet with the voting platform. The voting platform communicated with the go microservice.
+You can also see the information that the token represents in the voting platform .The keys are verified by communicating with go microservice.
+
+This demo showed the process of a user can successfully prove their digital identity online. Thank you.
