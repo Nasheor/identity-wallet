@@ -1,5 +1,5 @@
 # Decentralized Identity Wallet
-This prototype was developed as a proof of concept as to how distributed computing and decentralized storage provides an effective solution for User Identity Management and Protection on the Internet. The full research document based of which the application was built can be found [here](https://ipfs.infura.io:5001/api/v0/cat?arg=QmU8M2JBtE1VemiC8pYeZKPDrGG4s5d1SRYQ2T6YH6w1Zd)
+This prototype was developed as a proof of concept as to how distributed computing and decentralized storage provides an effective solution for User Identity Management and Protection on the Internet. The full research document based of which the application was built can be found in the document `Digial_Identity_Management_using_DLT.pdf`.
 
 ## Description
 The aim of the Identity management solution is to build transparency and trust in an environment where the privacy of a user's data is protected and the user's control over the data in regards to who can access it and what parts of the data that the external entity can view and store. How well the blockchain solution performs in providing a truly decentralized, transparent and immutable environment.
